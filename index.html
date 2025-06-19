@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>पटेलिया समाज को दिवाली की शुभकामनाएं</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(rgba(255, 255, 153, 0.6), rgba(255, 204, 102, 0.8)), url('https://i.imgur.com/9h6oK3F.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #FFFF33;
+            text-shadow: 0 0 10px #FFFF33, 0 0 20px #FFD700;
+        }
+        .shayari {
+            font-size: 1.2em;
+            color: #FFD700;
+            margin-bottom: 20px;
+            text-shadow: 0 0 6px #FFFF99;
+        }
+        #nameDisplay {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #FFFF33;
+            text-shadow: 0 0 8px #FFD700, 0 0 12px #FFFF33;
+        }
+        input {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 10px;
+            border: none;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #FF9800;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .whatsapp-share {
+            margin-top: 30px;
+        }
+        .whatsapp-share a {
+            text-decoration: none;
+            color: white;
+            background: #25D366;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>पटेलिया समाज को दिवाली की हार्दिक शुभकामनाएं!</h1>
+        <div class="shayari">दिये जलते और जगमगाते रहें,<br>हम आपको इसी तरह याद आते रहें,<br>जब तक ज़िंदगी है, दुआ है हमारी,<br>आप यूँ ही दीपों की तरह जगमगाते रहें।</div>
+        <div id="nameDisplay"></div>
+        <input type="text" id="nameInput" placeholder="अपना नाम लिखें" />
+        <br>
+        <button onclick="showName()">नाम जोड़ें</button>
+        <div class="whatsapp-share" id="whatsappLink" style="display:none">
+            <a id="whatsappShare" target="_blank">व्हाट्सएप पर शेयर करें</a>
+        </div>
+    </div>
+
+    <script>
+        function showName() {
+            const name = document.getElementById('nameInput').value;
+            if (name.trim() !== '') {
+                const message = `पटेलिया समाज को दिवाली की हार्दिक शुभकामनाएं!\n\nआपका - ${name}`;
+                document.getElementById('nameDisplay').textContent = `आपका - ${name}`;
+                const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                document.getElementById('whatsappShare').href = whatsappURL;
+                document.getElementById('whatsappLink').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
